@@ -8,14 +8,28 @@ int is_prime(int);
 int main() {
 
     int a;
+    int b;
+    int c;
     while (cin >> a)
     {
         for (int j = 2; j <= a; j++)
         {
             if (is_prime(j))
             {
-                cout << j << ", ";
+                if (a % j == 0)
+                {
+                    b = j;
+                }
             }
+        }
+        c = a/b;
+        if (c == 1)
+        {
+            cout << b << endl;
+        }
+        else
+        {
+            cout << c << " * " << b << endl;
         }
     }
     
