@@ -25,7 +25,7 @@ int main() {
         // cout << r2 << endl;
         r3 = step_3(ID[1], ID[2], ID[3], ID[4], ID[5], ID[6], ID[7], ID[8]);
         // cout << r3 << endl;
-        r4 = step_4(r2, r3, ID[9]);
+        r4 = step_4(r2, r3, ID[9]-'0');
         // cout << r4 << endl;
         r5 = step_5(r4);
     }
@@ -143,15 +143,24 @@ int step_2(int a){
 
 int step_3(char a, char b, char c, char d, char e, char f, char g, char h){
 
-    return 
-    (a-'0')*8+
-    (b-'0')*7+
-    (c-'0')*6+
-    (d-'0')*5+
-    (e-'0')*4+
-    (f-'0')*3+
-    (g-'0')*2+
-    (h-'0')*1;
+    // return 
+    // (a-'0')*8+
+    // (b-'0')*7+
+    // (c-'0')*6+
+    // (d-'0')*5+
+    // (e-'0')*4+
+    // (f-'0')*3+
+    // (g-'0')*2+
+    // (h-'0')*1;
+    char temp_arr[8] = {
+        a, b, c, d, e, f, g, h
+    };
+    int sum;
+    for (int i = 1; i <= 8; i++)
+    {
+        sum = (temp_arr[i-1]-'0')*i;
+    }
+    return sum;
 
 }
 
@@ -165,11 +174,11 @@ int step_5(int a){
 
     if (a % 10 == 0)
     {
-        cout << "real";
+        cout << "real" << endl;
     }
     if (a % 10 != 0)
     {
-        cout << "fake";
+        cout << "fake" << endl;
     }
     
 }
