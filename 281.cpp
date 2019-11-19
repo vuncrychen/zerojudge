@@ -23,54 +23,19 @@ int main() {
 
 int get_month(char a[10]){
     int count = 0;
-    int temp_1, temp_2;
     char result[2];
-    int f_result;
-    while (1)
+    while (a[count] != '/')
     {
-        if (a[count] != '/')
-        {
-            result[count] = a[count];
-        }
-        else
-        {
-            break;
-        }
+        result[count] = a[count];
         count += 1;
-    }
-    count = 0;
-    while (1)
-    {
-        if (result[count] != '\0')
-        {
-            count += 1;
-        }
-        else
-        {
-            break;
-        }
     }
     if (count == 1)
     {
         return result[0]-'0';
     }
-    else
+    if (count == 2)
     {
-        temp_1 = result[0]-'0';
-        temp_2 = result[1]-'0';
-        f_result = temp_1 + temp_2;
-        if (f_result == 1)
-        {
-            return 10;
-        }
-        else if (f_result == 2)
-        {
-            return 11;
-        }
-        else
-        {
-            return 12;
-        }
+        return (result[0]-'0')*10+(result[1]-'0');
     }
 }
 
