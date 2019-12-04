@@ -8,8 +8,7 @@ int main() {
     int n = 0;
     int sum = 0;
     int result = 0;
-    while (1)
-    {
+
         for (int i = 0; i < 5; i++)
         {
             cin >> t[0] >> t[1] >> t[2];
@@ -31,12 +30,10 @@ int main() {
             if (sum > big)
             {
                 result += 1;
-                cout << t[0] << " " << t[1] << " " << t[2] << endl;
             }
         }
         cout << result << endl;
         result = 0;
-    }
     
  return 0;
 }
