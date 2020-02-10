@@ -30,5 +30,8 @@
 *.exe
 *.out
 *.app
+
 # Project Setting
 .vscode/*
+Icon\r
+
